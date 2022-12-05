@@ -1,27 +1,26 @@
 <template>
   <div>
-    <h1>{{msg}}</h1>
+    <h1 
+      v-if="msg" 
+      class="message" 
+      @click="log">
+      {{ msg }}
+    </h1>
     <Hello />
   </div>
 </template>
 
 <script>
-import Hello from '~/components/Hello'
+import Hello from "~/components/Hello";
 
 export default {
   components: {
-    Hello
+    Hello,
   },
   data() {
     return {
-      msg: "Hello Webpack!"
-    }
-  }
-}
+      msg: "Hello Vue!",
+    };
+  },
+};
 </script>
-
-<style>
-  h1 {
-    color: red;
-  }
-</style>
